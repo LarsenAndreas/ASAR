@@ -200,7 +200,7 @@ if __name__ == "__main__":
     from mpl_toolkits.basemap import Basemap
 
     # LOAD PREDEFINED EXAMPLE
-    folder = "C:/Users/Andreas/Documents/GitHub/a_sar/code/data"
+    folder = "./data"
     with np.load(f"{folder}/np_arr_lat_2.npz") as npz:
         od_lat_time = np.ma.MaskedArray(**npz)
     with np.load(f"{folder}/np_arr_lon_2.npz") as npz:
@@ -288,10 +288,7 @@ if __name__ == "__main__":
         G=G,
     )
 
-    # path = findPath(**kwargs)
-
-    path = {"path": ((2, 9), (3, 9), (4, 9), (5, 9), (6, 9), (6, 10), (6, 11), (7, 11), (7, 12)), "args": {"v": (1, 9), "direction": (0, 1)}}
-    # path = {"path": list(G.nodes())[:14], "args": {"v": (1, 9), "direction": (0, 1)}}
+    path = findPath(**kwargs)
 
     print(path)
     animate(path=path["path"], bm=m, node_pos=node_pos, **kwargs)
