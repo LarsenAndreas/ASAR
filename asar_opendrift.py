@@ -195,7 +195,6 @@ def findPath(v_init, orient_init, pof_target, i_max, sensor_perf, time_max, spee
 
 if __name__ == "__main__":
     import networkx as nx
-    from matplotlib import pyplot as plt
     from itertools import combinations
     from mpl_toolkits.basemap import Basemap
 
@@ -251,7 +250,6 @@ if __name__ == "__main__":
     left, bottom = m(extend[2], extend[0])
     right, top = m(extend[3], extend[1])
     extent = (left, right, bottom, top)
-    # hist, *_ = np.histogram2d(data[:, 0], data[:, 1], bins=25)
     tx, ty = POC.shape
     dx = (extent[1] - extent[0]) / tx
     dy = (extent[3] - extent[2]) / ty
